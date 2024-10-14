@@ -5,51 +5,48 @@
 #include <type_traits>
 #include "fwd.hpp"
 
-template <int L = 0, int T = 0, int I = 0, int t = 0, int l = 0, int m = 0, int mol = 0> struct Dimension
+template <typename D1, typename D2> struct MultiplyDimension;
+template <typename D1, typename D2> struct DivideDimension;
+
+template <int m = 0, int K = 0, int A = 0, int s = 0, int Cd = 0, int kg = 0, int mol = 0> struct Dimension
 {
-    static constexpr auto length = L;
-    static constexpr auto temperature = T;
-    static constexpr auto current = I;
-    static constexpr auto time = t;
-    static constexpr auto luminous_intensity = l;
-    static constexpr auto mass = m;
-    static constexpr auto amount_of_substance = mol;
+private:
+    static constexpr auto _m = m;
+    static constexpr auto _K = K;
+    static constexpr auto _A = A;
+    static constexpr auto _s = s;
+    static constexpr auto _Cd = Cd;
+    static constexpr auto _kg = kg;
+    static constexpr auto _mol = mol;
+
+    friend struct MultiplyDimension<Dimension, Dimension>;
+    friend struct DivideDimension<Dimension, Dimension>;
 };
 
 template <typename D1, typename D2> struct MultiplyDimension
 {
+public:
     using type = Dimension<
-        D1::length + D2::length,
-        D1::temperature + D2::temperature,
-        D1::current + D2::current,
-        D1::time + D2::time,
-        D1::luminous_intensity + D2::luminous_intensity,
-        D1::mass + D2::mass,
-        D1::amount_of_substance + D2::amount_of_substance>;
+        D1::_m + D2::_m, //
+        D1::_K + D2::_K,
+        D1::_A + D2::_A,
+        D1::_s + D2::_s,
+        D1::_Cd + D2::_Cd,
+        D1::_kg + D2::_kg,
+        D1::_mol + D2::_mol>;
 };
 
 template <typename D1, typename D2> struct DivideDimension
 {
+public:
     using type = Dimension<
-        D1::length - D2::length,
-        D1::temperature - D2::temperature,
-        D1::current - D2::current,
-        D1::time - D2::time,
-        D1::luminous_intensity - D2::luminous_intensity,
-        D1::mass - D2::mass,
-        D1::amount_of_substance - D2::amount_of_substance>;
-};
-
-template <typename D1, int a> struct PowDimension
-{
-    using type = Dimension<
-        D1::length * a, //
-        D1::temperature * a,
-        D1::current * a,
-        D1::time * a,
-        D1::luminous_intensity * a,
-        D1::mass * a,
-        D1::amount_of_substance * a>;
+        D1::_m - D2::_m, //
+        D1::_K - D2::_K,
+        D1::_A - D2::_A,
+        D1::_s - D2::_s,
+        D1::_Cd - D2::_Cd,
+        D1::_kg - D2::_kg,
+        D1::_mol - D2::_mol>;
 };
 
 namespace si
