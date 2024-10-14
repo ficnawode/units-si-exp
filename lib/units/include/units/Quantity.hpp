@@ -1,8 +1,9 @@
 #pragma once
 
 #include "Dimension.hpp"
+#include "fwd.hpp"
 
-template <typename Dimension, typename T = float> class Quantity
+template <typename Dimension, typename T = SI_DEFAULT_VALUE_TYPE> class Quantity
 {
 public:
     constexpr explicit Quantity(T v) : value(v)

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <ratio>
 #include <type_traits>
+#include "fwd.hpp"
 
 template <int L = 0, int T = 0, int I = 0, int t = 0, int l = 0, int m = 0, int mol = 0> struct Dimension
 {
@@ -41,9 +42,16 @@ template <typename D1, typename D2> struct DivideDimension
 
 template <typename D1, int a> struct PowDimension
 {
-    using type =
-        Dimension<D1::length * a, D1::temperature * a, D1::current * a, D1::time * a, D1::luminous_intensity * a, D1::mass * a, D1::amount_of_substance * a>;
+    using type = Dimension<
+        D1::length * a, //
+        D1::temperature * a,
+        D1::current * a,
+        D1::time * a,
+        D1::luminous_intensity * a,
+        D1::mass * a,
+        D1::amount_of_substance * a>;
 };
+
 namespace si
 {
     using one = Dimension<>;
