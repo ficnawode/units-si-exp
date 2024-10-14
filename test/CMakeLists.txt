@@ -7,7 +7,7 @@ PUBLIC
     gtest 
     gtest_main
     
-    dummy
+    units
 )
 
 target_include_directories(${NAME}
@@ -17,7 +17,7 @@ PRIVATE
 
 target_sources(${NAME}
 PRIVATE
-    src/dummy_test.cpp
+    src/unit_mismatch_test.cpp
 )
 
 add_custom_target(${NAME}.run

@@ -6,10 +6,14 @@
     "cmake.configureOnEdit": true,
     "cmake.configureOnOpen": true,
     "editor.codeActionsOnSave": {
-        "source.fixAll": true
+        "source.fixAll": "explicit"
     },
     "editor.formatOnSave": true,
     "clang-format.executable": "clang-format",
     "clang-format.language.c.enable": true,
-    "clang-format.language.cpp.enable": true
+    "clang-format.language.cpp.enable": true,
+    "files.associations": {
+        "ratio": "cpp",
+        "type_traits": "cpp"
+    }
 }

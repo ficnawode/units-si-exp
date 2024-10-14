@@ -16,6 +16,6 @@ include(cmake/fetch_content.cmake)
 enable_testing()
 include(GoogleTest)
 
-add_subdirectory(exec)
+# add_subdirectory(exec)
 add_subdirectory(lib)
 add_subdirectory(test)

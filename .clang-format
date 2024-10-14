@@ -60,7 +60,7 @@ SpaceBeforeParens: Never
 SpaceBeforeRangeBasedForLoopColon: false
 SpaceInEmptyParentheses: false
 SpacesInAngles: false
-SpacesInCStyleCastParentheses: false
+# SpacesInCStyleCastParentheses: false
 SpacesInContainerLiterals: false
 SpacesInCStyleCastParentheses: false
 SpacesInParentheses: false
