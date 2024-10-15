@@ -36,23 +36,26 @@ Where:
 $$
 \phi = BAcos(\theta)
 $$
-```
-        //a, b defined in centimeters
-        auto length_a = 1.0_cm;
-        auto length_b = 2.0_cm;
+```cpp
+// Lengths a, b defined in centimeters
+auto length_a = 1.0_cm;
+auto length_b = 2.0_cm;
 
-        //dimensionless quantity
-        auto cos_theta = 1.0;
+// Dimensionless floating point quantity
+auto cos_theta = 1.0;
 
-        // B defined in teslas
-        auto B = 1.0_T;
-        // Area - induced unit:m^2
-        auto Area = length_a * length_b;
+// B defined in teslas
+auto B = 1.0_T;
 
-        // arithmetic - Teslas *m^2
-        auto flux = B * Area * cos_theta;
-        // Dimensionless quantity
-        const float N = 1.0;
-        //The result will be given in volts (kg*m^2/(A*s^3))
-        auto voltage = flux / 1.0_s * N;
+// Area - induced unit: m^2
+auto Area = length_a * length_b;
+
+// Flux - induced unit - T*m^2
+auto flux = B * Area * cos_theta;
+
+// Dimensionless quantity
+const float N = 1.0;
+
+// The result will automatically be given in volts (kg*m^2/(A*s^3))
+auto voltage = flux / 1.0_s * N;
 ```
