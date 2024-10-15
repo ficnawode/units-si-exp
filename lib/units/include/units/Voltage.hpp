@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Quantity.hpp"
 
 namespace units

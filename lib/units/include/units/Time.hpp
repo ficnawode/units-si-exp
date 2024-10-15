@@ -5,7 +5,7 @@
 namespace units
 {
 
-    using Time = Quantity<si::s>;
+    using Time = Quantity<si_dimensions::s>;
 
     namespace literals
     {
