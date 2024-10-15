@@ -18,9 +18,8 @@ private:
     static constexpr auto _Cd = Cd;
     static constexpr auto _kg = kg;
     static constexpr auto _mol = mol;
-
-    friend struct MultiplyDimension<Dimension, Dimension>;
-    friend struct DivideDimension<Dimension, Dimension>;
+    template <typename D1, typename D2> friend struct MultiplyDimension;
+    template <typename D1, typename D2> friend struct DivideDimension;
 };
 
 template <typename D1, typename D2> struct MultiplyDimension

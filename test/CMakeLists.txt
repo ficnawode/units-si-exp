@@ -19,6 +19,7 @@ target_sources(${NAME}
 PRIVATE
     src/unit_mismatch_test.cpp
     src/length_test.cpp
+    src/physics_test.cpp
 )
 
 add_custom_target(${NAME}.run

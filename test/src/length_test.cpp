@@ -8,36 +8,36 @@ namespace
     TEST(length_tests, nano)
     {
         auto length = 1.0_nm;
-        ASSERT_DOUBLE_EQ(length.raw_value(), 1e-9);
+        ASSERT_FLOAT_EQ(length.raw_value(), 1e-9);
     }
 
     TEST(length_tests, micro)
     {
         auto length = 1.0_um;
-        ASSERT_DOUBLE_EQ(length.raw_value(), 1e-6);
+        ASSERT_FLOAT_EQ(length.raw_value(), 1e-6);
     }
 
     TEST(length_tests, milli)
     {
         auto length = 1.0_mm;
-        ASSERT_DOUBLE_EQ(length.raw_value(), 1e-3);
+        ASSERT_FLOAT_EQ(length.raw_value(), 1e-3);
     }
 
     TEST(length_tests, centi)
     {
         auto length = 1.0_cm;
-        ASSERT_DOUBLE_EQ(length.raw_value(), 1e-2);
+        ASSERT_FLOAT_EQ(length.raw_value(), 1e-2);
     }
 
     TEST(length_tests, meter)
     {
         auto length = 1.0_m;
-        ASSERT_DOUBLE_EQ(length.raw_value(), 1.0);
+        ASSERT_FLOAT_EQ(length.raw_value(), 1.0);
     }
 
     TEST(length_tests, kilo)
     {
         auto length = 1.0_km;
-        ASSERT_DOUBLE_EQ(length.raw_value(), 1e3);
+        ASSERT_FLOAT_EQ(length.raw_value(), 1e3);
     }
 }

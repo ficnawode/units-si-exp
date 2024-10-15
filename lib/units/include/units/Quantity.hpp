@@ -26,8 +26,9 @@ public:
         return Quantity<ResultDimension, T>(value * other.value);
     }
 
-    constexpr auto operator*(const T scale) const
+    template <typename FloatLike> constexpr auto operator*(const FloatLike scale) const
     {
+        static_assert(std::is_floating_point_v<FloatLike>);
         return Quantity<Dimension, T>(value * scale);
     }
 
@@ -38,8 +39,9 @@ public:
         return Quantity<ResultDimension, T>(value / other.value);
     }
 
-    constexpr auto operator/(const T scale) const
+    template <typename FloatLike> constexpr auto operator/(const FloatLike scale) const
     {
+        static_assert(std::is_floating_point_v<FloatLike>);
         return Quantity<Dimension, T>(value / scale);
     }
 
@@ -90,4 +92,6 @@ public:
 
 private:
     T value;
+
+    template <typename D1, typename T1> friend class Quantity;
 };

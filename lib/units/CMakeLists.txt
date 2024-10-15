@@ -10,8 +10,3 @@ target_include_directories(${NAME} INTERFACE
     include/
 )
 
-target_sources(${NAME}
-PRIVATE
-    include/units/Dimension.hpp
-    include/units/Quantity.hpp
-)
