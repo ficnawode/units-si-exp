@@ -1,8 +1,10 @@
-#include "units/Length.hpp"
-#include "units/MagneticFluxDensity.hpp"
 #include "units/Quantity.hpp"
-#include "units/Time.hpp"
-#include "units/Voltage.hpp"
+
+#include "units/base/Length.hpp"
+#include "units/base/Time.hpp"
+
+#include "units/compound/MagneticFluxDensity.hpp"
+#include "units/compound/Voltage.hpp"
 
 #include <gtest/gtest.h>
 

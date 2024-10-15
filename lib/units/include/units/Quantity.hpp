@@ -120,6 +120,7 @@ namespace units
 
         T value;
 
-        template <typename D1, typename T1> friend class Quantity;
+        template <typename D1, typename T1> //
+        friend class Quantity;
     };
 }
