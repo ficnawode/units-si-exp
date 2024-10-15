@@ -59,3 +59,15 @@ const float N = 1.0;
 // The result will automatically be given in volts (kg*m^2/(A*s^3))
 auto voltage = flux / 1.0_s * N;
 ```
+
+in this case 
+
+```cpp
+std::cout << voltage.to_string() << std::endl;
+```
+
+returns 
+
+```
+0.000200 m^{2} A^{-1} s^{-3} kg^{1}
+```

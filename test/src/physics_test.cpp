@@ -6,6 +6,7 @@
 #include "units/compound/MagneticFluxDensity.hpp"
 #include "units/compound/Voltage.hpp"
 
+#include <iostream>
 #include <gtest/gtest.h>
 
 namespace
@@ -39,6 +40,8 @@ namespace
         auto flux = B * Area * cos_theta;
         const float N = 1.0;
         auto voltage = flux / 1.0_s * N;
+
+        std::cout << voltage.to_string() << std::endl;
 
         auto res_unit = 1.0_V;
 

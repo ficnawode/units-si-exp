@@ -27,6 +27,9 @@ namespace units
 
         template <typename D1, typename D2> //
         friend struct DivideDimension;
+
+        template <typename D, typename T> //
+        friend class Quantity;
     };
 
     template <typename D1, typename D2> struct MultiplyDimension

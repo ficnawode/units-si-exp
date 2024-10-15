@@ -99,6 +99,56 @@ namespace units
             return value;
         }
 
+        std::string to_string()
+        {
+            std::string res = "";
+            res += std::to_string(value);
+            res += ' ';
+            if(Dimension::_m != 0)
+            {
+                res += "m^{";
+                res += std::to_string(Dimension::_m);
+                res += "} ";
+            }
+            if(Dimension::_K != 0)
+            {
+                res += "K^{";
+                res += std::to_string(Dimension::_K);
+                res += "} ";
+            }
+            if(Dimension::_A != 0)
+            {
+                res += "A^{";
+                res += std::to_string(Dimension::_A);
+                res += "} ";
+            }
+            if(Dimension::_s != 0)
+            {
+                res += "s^{";
+                res += std::to_string(Dimension::_s);
+                res += "} ";
+            }
+            if(Dimension::_Cd != 0)
+            {
+                res += "Cd^{";
+                res += std::to_string(Dimension::_Cd);
+                res += "} ";
+            }
+            if(Dimension::_kg != 0)
+            {
+                res += "kg^{";
+                res += std::to_string(Dimension::_kg);
+                res += "} ";
+            }
+            if(Dimension::_mol != 0)
+            {
+                res += "mol^{";
+                res += std::to_string(Dimension::_mol);
+                res += "} ";
+            }
+            return res;
+        }
+
     private:
         template <typename D1, typename D2> //
         inline void assert_same_dimension() const
@@ -123,4 +173,5 @@ namespace units
         template <typename D1, typename T1> //
         friend class Quantity;
     };
+
 }
